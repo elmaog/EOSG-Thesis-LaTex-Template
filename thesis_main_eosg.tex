@@ -1,0 +1,146 @@
+
+\documentclass[reqno,11pt]{book}
+\usepackage{amsmath,amssymb,amsfonts} % Typical maths resource packages
+\usepackage{graphicx}                 % Packages to allow inclusion of graphics
+\usepackage{subfigure}                %to print pictures side by side
+\usepackage{color}                    % For creating coloured text and background
+\usepackage{hyperref}                 % For creating hyperlinks in cross references
+%\usepackage[ddmmyyyy]{datetime}									
+\usepackage[nodayofweek]{datetime}  	% To specify the date in UK form (instead of US)
+ \usepackage{rotating}    %to allow large tables/pics to print on landscape
+ \usepackage{setspace}
+
+\def\cleardoublepage{\clearpage\if@twoside%              %To prevent empty pages apprearing before each chapter
+  \ifodd\c@page\else\hbox{}\thispagestyle{empty}\newpage%
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
+\parindent 1cm
+\parskip 0.2cm
+\topmargin 0.2cm
+\oddsidemargin 1cm
+\evensidemargin 0.5cm
+\textwidth 15cm
+\textheight 21cm
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+
+
+\def\R{\mathbb{ R}}
+\def\S{\mathbb{ S}}
+\def\I{\mathbb{ I}}
+\makeindex
+
+
+%TITLE PAGE
+\include{frontpage}
+
+\def\blurb{%
+  Department of Electrical \& Electronic Engineering \\
+  The University of Melbourne\\ \\
+  National ICT Australia (NICTA) }
+\author{Elma O'Sullivan-Greene}
+\title{\huge{The EEG As A Measurement Of Brain Activity: Towards Prediction of Epileptic Seizures}}
+\date{\monthname, 2009}
+\def\reqtexta{%
+Submitted in total fulfilment of}
+\def\reqtextb{%
+the requirements of the degree of}
+\def\reqtextc{%
+Doctor of Philosophy}
+
+% Comment out the following line for the copy submitted to the library
+\def\arc {\ttfamily \small \fbox { {Produced on archival quality paper}}}
+
+
+
+\begin{document}
+\maketitle   %makes title page of document according to the commands in frontpage.txt
+ 
+\chapter*{Abstract}\normalsize
+  \addcontentsline{toc}{chapter}{Abstract}
+  
+\pagestyle{plain}
+\input{abstract}
+\pagebreak
+
+\chapter*{Declaration}\normalsize
+  \addcontentsline{toc}{chapter}{Declaration}
+  
+\pagestyle{plain}
+\input{declaration}
+\pagebreak
+
+\chapter*{Acknowledgements}\normalsize
+  \addcontentsline{toc}{chapter}{Acknowledgements}
+  
+\pagestyle{plain}
+\input{acknowledgements}
+\pagebreak
+
+\addcontentsline{toc}{chapter}{Contents}
+\pagenumbering{roman}
+\pagestyle{headings}
+\tableofcontents
+\listoffigures
+ \addcontentsline{toc}{section}{List of Figures}
+\listoftables
+ \addcontentsline{toc}{section}{List of Tables}
+\include{abbreviations}
+
+
+
+%\chapter*{Preface}\normalsize
+%  \addcontentsline{toc}{chapter}{Preface}
+  
+%\pagestyle{plain}
+%The text for preface
+
+
+\chapter*{Introduction}\normalsize
+  \addcontentsline{toc}{chapter}{Introduction}
+  
+\pagestyle{plain}
+\onehalfspacing
+
+\input{intro}
+
+\pagebreak
+\pagestyle{headings}
+\pagenumbering{arabic}
+
+
+\numberwithin{table}{section}   %otherwise table will be labeled "Table 1.1", but when referenceing withing the text will get "see Table 1.3.1"
+%may later have to do the same with equations
+\numberwithin{equation}{section}
+
+%other examples
+%\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+%\numberwithin{table}{section}
+%\numberwithin{equation}{chapter}
+%\numberwithin{figure}{chapter}
+%\numberwithin{table}{chapter}
+
+\include{ch1}
+\include{ch2}
+\include{ch3}
+
+
+
+
+
+
+
+
+ \bibliography{Bib_thesis}
+  \addcontentsline{toc}{chapter}{Bibliography}
+
+   \bibliographystyle{unsrt}
+
+  %\addcontentsline{toc}{chapter}{Index}
+
+\end{document}

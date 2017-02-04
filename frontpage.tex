@@ -1,0 +1,40 @@
+
+\makeatletter
+\def\thickhrulefill{\leavevmode \leaders \hrule height 1pt\hfill \kern \z@}
+\renewcommand{\maketitle}{\begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \parindent \z@
+  \blurb
+  \vspace{50mm}
+    \begin{flushleft}
+      \@title
+    \end{flushleft}
+    \par
+    \hrule height 1pt
+    \par
+    \begin{flushright}
+      \large \@author \par
+    \end{flushright}
+    \vspace{15mm}
+     \begin{center}
+    \normalfont
+    {\normalsize \reqtexta\par}%
+    \vskip 0cm
+    {\normalsize \reqtextb\par}%
+    \vskip 0.1cm
+    {\Large \it \reqtextc\par}%
+    \end{center}%
+    \vspace{20mm}
+    \begin{flushright}
+    \arc
+    \end{flushright}
+     \vspace{15mm}
+   \begin{flushright}
+    \normalsize \@date
+   \end{flushright}
+    \vfil\null
+  \end{titlepage}%
+  \setcounter{footnote}{0}%
+}
+\makeatother
